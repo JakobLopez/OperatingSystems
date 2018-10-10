@@ -1,0 +1,12 @@
+Thread 1 's sum is 500500 
+Thread 2 's sum is 1500500 
+Thread 3 's sum is 2500500 
+Thread 4 's sum is 3500500 
+Thread 5 's sum is 4500500 
+Without mutexes, the total is  12502500 
+Thread 1 's sum is 500500 
+Thread 2 's sum is 1500500 
+Thread 3 's sum is 2500500 
+Thread 5 's sum is 4500500 
+Thread 4 's sum is 3500500 
+With mutexes, the total is  12502500 
