@@ -6,6 +6,7 @@
 //PROGRAM: 
 //		thread_parallelism
 //DESCRIPTION: 
+//		Run in Cygwin: g++ thread_parallelism.cpp -o a
 //		This program declares an array with numbers 1 - 5000.
 //		Threads are used to find the sum of the array. Each
 //		thread computes section tid * 1000 to (tid + 1) * 1000.
