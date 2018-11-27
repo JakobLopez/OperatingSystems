@@ -1,0 +1,5 @@
+﻿  thread_matrix_mult.cpp
+thread_matrix_mult.obj : error LNK2019: unresolved external symbol __imp__pthread_create referenced in function _main
+thread_matrix_mult.obj : error LNK2019: unresolved external symbol __imp__pthread_exit referenced in function "void * __cdecl multiply_matrix(void *)" (?multiply_matrix@@YAPAXPAX@Z)
+thread_matrix_mult.obj : error LNK2019: unresolved external symbol __imp__pthread_join referenced in function _main
+C:\Users\theja\Desktop\Operating Systems\thread_matrix_mult\Debug\thread_matrix_mult.exe : fatal error LNK1120: 3 unresolved externals

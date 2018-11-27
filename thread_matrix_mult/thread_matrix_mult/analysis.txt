@@ -1,0 +1,6 @@
+WITH THREADING (intel core i5)
+Result at [2, 2]: 40000
+Left neighbor: 9991.87
+Right neighbor: 10013.1
+Top neighbor: 10081.4
+Bottom neighbor: 10041.3
