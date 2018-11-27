@@ -4,3 +4,4 @@ Left neighbor: 9991.87
 Right neighbor: 10013.1
 Top neighbor: 10081.4
 Bottom neighbor: 10041.3
+Time taken: 11116.9s
