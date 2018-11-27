@@ -74,13 +74,14 @@ int main()
 	printf("Enter a value:");
 	cin >> colVal;
 
-
+	//Changes row/col
 	changeRow(rowNum, rowVal);
 	changeCol(colNum, colVal);
-
+	
+	//Loops twice: with and without threads
 	for (int i = 0; i < 2; i++)
 	{
-
+		//Starts clock
 		clock_t tStart = clock();
 
 		if (i == 0)
