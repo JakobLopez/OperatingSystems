@@ -49,7 +49,6 @@ int main()
 
 	int rowNum, colNum;
 	float rowVal, colVal;
-	char thread_option;
 
 
 	ofstream resultMatrix;
