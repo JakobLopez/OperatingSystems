@@ -133,40 +133,10 @@ int main()
 	analysis_wo_thread.close();
 }
 
-void printAnalysis(int rowNum, int colNum,clock_t tStart, ofstream& out)
-{
-
-	out << "Result at [" << rowNum << ", " << colNum << "]: " << result[rowNum][colNum] << endl;
-	out << "Left neighbor: " << result[rowNum][colNum - 1] << endl;
-	out << "Right neighbor: " << result[rowNum][colNum + 1] << endl;
-	out << "Top neighbor: " << result[rowNum - 1][colNum] << endl;
-	out << "Bottom neighbor: " << result[rowNum + 1][colNum] << endl;
-	out << "Time taken: " << (double)(clock() - tStart) / CLOCKS_PER_SEC << "s";
-
-}
-void resetArray(float m[N][N])
-{
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			 m[i][j] = 0;
-		}
-	}
-}
-void printarr(float m[N][N], ofstream& out)
-{
-
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = 0; j < N; j++)
-		{
-			out << m[i][j] << " ";
-		}
-		out << endl;
-	}
-}
-
+//Changes the entire column of array2
+//Params:
+//	c - column to be changed
+//	x - value set in c
 void changeCol(int c, float x)
 {
 	for (int i = 0; i < N; i++)
@@ -176,6 +146,10 @@ void changeCol(int c, float x)
 	}
 }
 
+//Changes the entire row of array1
+//Params:
+//	r - row to be changed
+//	x - value set in c
 void changeRow(int r, float x)
 {
 	for (int i = 0; i < N; i++)
@@ -183,6 +157,7 @@ void changeRow(int r, float x)
 		array1[r][i] = x;
 	}
 }
+
 //Initializes arary with random values
 void initArray(float m[N][N])
 {
@@ -201,9 +176,10 @@ void initArray(float m[N][N])
 	}
 }
 
+//Multiplies two matrices without threads
 void mult_matrix_noThread()
 {
-	// Multiplying matrix a and b and storing in array mult.
+	// Multiplying matrices storing in array result.
 	for (int i = 0; i < N; ++i)
 		for (int j = 0; j < N; ++j)
 			for (int k = 0; k < N; ++k)
@@ -212,6 +188,9 @@ void mult_matrix_noThread()
 			}
 }
 
+//Multiplies two matrices with threads
+//Params:
+//	void *tid - id of thread entering function
 void* multiply_matrix_threads(void *tid)
 {
 	const int n_elements = N * N;
@@ -238,4 +217,48 @@ void* multiply_matrix_threads(void *tid)
 	}
 
 	pthread_exit(NULL);
+}
+
+
+//Prints out element of specified location and its surrounding neighbors
+//Params:
+//	int rowNum - row that was chosen by user
+//	int colNum - column that was chosen by user
+//	clock_t tStart - start of a clock
+//	ofstream& out - allows to write to file
+void printAnalysis(int rowNum, int colNum,clock_t tStart, ofstream& out)
+{
+
+	out << "Result at [" << rowNum << ", " << colNum << "]: " << result[rowNum][colNum] << endl;
+	out << "Left neighbor: " << result[rowNum][colNum - 1] << endl;
+	out << "Right neighbor: " << result[rowNum][colNum + 1] << endl;
+	out << "Top neighbor: " << result[rowNum - 1][colNum] << endl;
+	out << "Bottom neighbor: " << result[rowNum + 1][colNum] << endl;
+	out << "Time taken: " << (double)(clock() - tStart) / CLOCKS_PER_SEC << "s";
+
+}
+
+//Prints given array to file
+void printarr(float m[N][N], ofstream& out)
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			out << m[i][j] << " ";
+		}
+		out << endl;
+	}
+}
+
+//Sets given array to all 0s
+void resetArray(float m[N][N])
+{
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			 m[i][j] = 0;
+		}
+	}
 }
