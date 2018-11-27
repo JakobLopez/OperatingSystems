@@ -1,4 +1,4 @@
-WITHOUT THREADING (intel core i5)
+WITHOUT THREADING 
 Result at [2, 2]: 40000
 Left neighbor: 9991.87
 Right neighbor: 10013.1
