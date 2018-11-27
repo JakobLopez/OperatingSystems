@@ -6,7 +6,15 @@
 //PROGRAM: 
 //		thread_matrix_mult
 //DESCRIPTION: 
-//		
+//		RUN THIS PROGRAM IN CYGWIN USING G++
+//This program multiplies 2 10,000 x 10,000 matrices(takes a long time).
+//Each matrix is randomly initizialized with values 0 through 1.
+//The user chooses a value to be placed in an entire row of matrix 1
+//and an entire column of matrix 2. This is done so the calculation can
+//be validated. The program runs twice: once with 4 threads and the 
+//other time without threads. The two results are compared and show
+//the amount of time taken. Analysis shows the value of the row and 
+//column that was chosen, and also its 4 surrounding neighbors.
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 #define HAVE_STRUCT_TIMESPEC
 #include<pthread.h>
