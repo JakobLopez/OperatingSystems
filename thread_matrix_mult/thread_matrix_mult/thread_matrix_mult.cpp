@@ -102,7 +102,7 @@ int main()
 			for (int i = 0; i < NUMBER_OF_THREADS; i++)
 				pthread_join(threads[i], NULL);
 
-			analysis_w_thread << "WITH THREADING (intel core i5)" << endl;
+			analysis_w_thread << "WITH THREADING" << endl;
 			printAnalysis(rowNum, colNum, tStart, analysis_w_thread);
 
 			cout << "check analysis.txt"<<endl;
@@ -117,7 +117,7 @@ int main()
 
 			mult_matrix_noThread();
 
-			analysis_wo_thread << "WITHOUT THREADING (intel core i5)" << endl;
+			analysis_wo_thread << "WITHOUT THREADING" << endl;
 			printAnalysis(rowNum, colNum, tStart, analysis_wo_thread);
 
 			cout << "check analysis2.txt";
