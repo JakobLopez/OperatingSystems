@@ -1,0 +1,32 @@
+
+Without mutex 
+Display 1 Thread 1 
+Display 1 Thread 2 
+Display 2 Thread 2 
+Display 3 Thread 3 
+Display 4 Thread 2 
+Display 5 Thread 3 
+Display 6 Thread 2 
+Display 7 Thread 3 
+Display 8 Thread 2 
+Display 9 Thread 3 
+Display 10 Thread 2 
+Counter is already 10 Thread 3 
+Counter is already 10 Thread 2 
+Display 3 Thread 1 
+Counter is already 10 Thread 1 
+
+With mutex 
+Display 1 Thread 1 
+Display 2 Thread 2 
+Display 3 Thread 3 
+Display 4 Thread 1 
+Display 5 Thread 2 
+Display 6 Thread 3 
+Display 7 Thread 1 
+Display 8 Thread 2 
+Display 9 Thread 3 
+Display 10 Thread 1 
+Counter is already 10 Thread 1 
+Counter is already 10 Thread 2 
+Counter is already 10 Thread 3 
